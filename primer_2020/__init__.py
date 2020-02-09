@@ -28,6 +28,10 @@ def factorize(number: int) -> List[int]:
     if number < 0:
         number *= -1
         factors.append(-1)
+    if number == 1:
+        if len(factors) == 0:
+            factors.append(1)
+        return factors
     for factor in range(2, number + 1):
         while number % factor == 0:
             factors.append(factor)
